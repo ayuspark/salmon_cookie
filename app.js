@@ -4,6 +4,7 @@ var hours = ['6am', '7am', '8am', '9am', '11am', '12am', '1pm', '2pm', '3pm', '4
 
 //LOCATION: PIKE
 var pike = {
+  name: 'Pike Place',
   minCustPerHr: 23,
   maxCustPerHr: 65,
   avgCookiesPerCust: 6.3,
@@ -53,6 +54,7 @@ pike.render();
 
 //LOCATION: SEATAC AIRPORT
 var seatac = {
+  name: 'SeaTac Airport',
   minCustPerHr: 23,
   maxCustPerHr: 65,
   avgCookiesPerCust: 6.3,
@@ -102,6 +104,7 @@ seatac.render();
 
 //LOCATION: SEATTLE CENTER
 var center = {
+  name: 'Seattle Center',
   minCustPerHr: 23,
   maxCustPerHr: 65,
   avgCookiesPerCust: 6.3,
@@ -151,6 +154,7 @@ center.render();
 
 //LOCATION: CAPITOL HILL
 var caphill = {
+  name: 'Capitol Hill',
   minCustPerHr: 23,
   maxCustPerHr: 65,
   avgCookiesPerCust: 6.3,
@@ -200,6 +204,7 @@ caphill.render();
 
 //LOCATION: ALKI
 var alki = {
+  name: 'Alki',
   minCustPerHr: 23,
   maxCustPerHr: 65,
   avgCookiesPerCust: 6.3,
