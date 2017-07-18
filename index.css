@@ -8,32 +8,50 @@ font-family: 'Raleway', sans-serif;
 font-family: 'Neuton', serif;
 font-family: 'Kurale', serif;*/
 
-#logo img {
-  height: 140px;
-  width: auto;
+#logo {
   float: left;
-  margin-right: 30px;
+  border: 2px solid purple;
+  height: 610px;
+  padding: 0 0;
 }
 
-#logo nav a {
-  float: right;
-  margin: 15px 3%;
-  padding: 15px 20px;
+#logo img {
+  height: auto;
+  width: 280px;
+  margin: 0 0;
+}
+
+#logo ul {
+  width: 280px;
+  /*height: auto;*/
+  margin: 0 0;
+}
+
+#logo li {
+  width: 280px;
+  list-style: none;
+  margin: 0 auto;
+  padding: 45px 55px;
+  text-align: center;
+  border: 2px solid blue;
+}
+
+#logo li a {
   border: 2px dashed grey;
 }
 
-#logo nav {
-  margin: 20px auto;
-}
-
 #square_modules {
-  clear:both;
-  height: 480px;
-  background-color: #353328;
+  float: left;
+  height: 610px;
+  width: 970px;
+  border: 2px solid green;
+  /*background-color: #353328;*/
 }
 
 #hero {
-  /*background-color: #353328;*/
+  clear: both;
+  background-color: #353328;
+  border: 2px solid red;
 }
 
 #hero img {
