@@ -1,1 +1,44 @@
+* {
+  border: 2px dashed orange;
+  box-sizing: border-box;
+}
 
+/*
+font-family: 'Raleway', sans-serif;
+font-family: 'Neuton', serif;
+font-family: 'Kurale', serif;*/
+
+#logo img {
+  height: 140px;
+  width: auto;
+  float: left;
+  margin-right: 30px;
+}
+
+#logo nav a {
+  float: right;
+  margin: 15px 3%;
+  padding: 15px 20px;
+  border: 2px dashed grey;
+}
+
+#logo nav {
+  margin: 20px auto;
+}
+
+#square_modules {
+  clear:both;
+  height: 480px;
+  background-color: #353328;
+}
+
+#hero {
+  /*background-color: #353328;*/
+}
+
+#hero img {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  width: 20%;
+}
