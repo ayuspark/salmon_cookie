@@ -1,6 +1,6 @@
 'use strict';
 
-var hours = ['6am', '7am', '8am', '9am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
 var cookieStand = [];
 var salesTable = document.getElementById('sales');
@@ -45,7 +45,6 @@ function CookieStand(name, minCustPerHr, maxCustPerHr, avgCookiesPerCust){
   cookieStand.push(this); //gather stand objects into an array
 
   this.render = function(){
-
     //create rows for each Cookie stand
     var trEl = document.createElement('tr'); //put the name in the first column
     var tdEl = document.createElement('td');
@@ -75,6 +74,8 @@ function tableHeader(){
   emptyHeadCell.textContent = '';
   headTrEl.appendChild(emptyHeadCell);
 
+  emptyHeadCell.style.borderWidth = 0;
+
   //create Table Head
   for(var i = 0; i < hours.length; i ++){
     var thEl = document.createElement('th');
@@ -84,7 +85,7 @@ function tableHeader(){
 
   //create 'Total' in table head
   var totalThEl = document.createElement('th');
-  totalThEl.textContent = "Total";
+  totalThEl.textContent = 'Total';
   headTrEl.appendChild(totalThEl);
   salesTable.appendChild(headTrEl);
 }
