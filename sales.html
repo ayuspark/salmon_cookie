@@ -8,9 +8,23 @@
   </head>
   <body>
     <h2>Cookie Stand Sales Data</h2>
-    <table id="sales">
 
-    </table>
+    <form id="new_stand">
+      <fieldset>
+        <legend>New Stand Info</legend>
+        <label for="stand">Location</label>
+        <input name="stand" type="text" />
+        <label for="minCustPerHr">Min. Customer/HR</label>
+        <input name="minCustPerHr" type="number" />
+        <label for="maxCustPerHr">Max. Customer/HR</label>
+        <input name="maxCustPerHr" type = "number" />
+        <label for="avgCookiesPerCust">AVG. Coookie/person</lable>
+        <input name="avgCookiesPerCust" type="number" />
+        <button type="submit">New Stand</button>
+      </fieldset>
+    </form>
+
+    <table id="sales"></table>
   </body>
   <script src="cookie_stand_object.js"></script>
 </html>
