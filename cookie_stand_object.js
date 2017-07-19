@@ -51,6 +51,9 @@ function CookieStand(name, minCustPerHr, maxCustPerHr, avgCookiesPerCust){
     tdEl.textContent = this.name;
     trEl.appendChild(tdEl);
 
+    tdEl.style.backgroundColor = '#353328';
+    tdEl.style.color = '#D9BD7E'; //style the location column
+
     for(var n = 0; n < hours.length; n++){
       tdEl = document.createElement('td');
       tdEl.textContent = this.cookiesPerHr[n];
@@ -61,7 +64,7 @@ function CookieStand(name, minCustPerHr, maxCustPerHr, avgCookiesPerCust){
     totalTdEl.textContent = this.totalCookiesPerDay;
     trEl.appendChild(totalTdEl);
 
-    totalTdEl.style.color = 'salmon';
+    totalTdEl.style.color = '#D9BD7E'; //style the total cookies
 
     salesTable.appendChild(trEl);
   };
@@ -83,6 +86,7 @@ function tableHeader(){
     var thEl = document.createElement('th');
     thEl.textContent = hours[i];
     headTrEl.appendChild(thEl);
+    thEl.style.color = '#D9BD7E'; //style head row
   }
 
   //create 'Total' in table head
@@ -90,7 +94,10 @@ function tableHeader(){
   totalThEl.textContent = 'Total';
   headTrEl.appendChild(totalThEl);
   salesTable.appendChild(headTrEl);
+  totalThEl.style.backgroundColor = '#D9BD7E';
+  totalThEl.style.color = '#353328'; //style the Total table head
 }
+
 
 //iterate to create rows for EACH STAND
 function cookieStandRows(){
