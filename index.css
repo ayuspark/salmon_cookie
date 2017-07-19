@@ -1,5 +1,5 @@
 * {
-  border: 2px dashed orange;
+  /*border: 2px dashed orange;*/
   box-sizing: border-box;
 }
 
@@ -10,7 +10,7 @@ font-family: 'Kurale', serif;*/
 
 #logo {
   float: left;
-  border: 2px solid purple;
+  /*border: 2px solid purple;*/
   height: 610px;
   padding: 0 0;
 }
@@ -23,35 +23,48 @@ font-family: 'Kurale', serif;*/
 
 #logo ul {
   width: 280px;
-  /*height: auto;*/
   margin: 0 0;
+  padding: 0;
 }
 
 #logo li {
+  background-color: #353328;
+  font-family: 'Kurale', serif;
+  font-size: 28px;
   width: 280px;
   list-style: none;
-  margin: 0 auto;
-  padding: 45px 55px;
+  display: block;
+  margin: 0 0;
+  /*padding: 36px 55px;*/
   text-align: center;
-  border: 2px solid blue;
+  border: 1px solid white;
+}
+
+#logo li :hover {
+  color: #353328;
+  background-color: #D9BD7E;
 }
 
 #logo li a {
+  color: #D9BD7E;
+  text-decoration: none;
+  display: block;
+  padding: 34px 55px;
   border: 2px dashed grey;
 }
 
 #square_modules {
   float: left;
   height: 610px;
-  width: 970px;
+  width: 984px;
   border: 2px solid green;
   /*background-color: #353328;*/
 }
 
 #hero {
   clear: both;
-  background-color: #353328;
-  border: 2px solid red;
+  background-color: #D9BD7E;
+
 }
 
 #hero img {
