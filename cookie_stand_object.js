@@ -61,6 +61,8 @@ function CookieStand(name, minCustPerHr, maxCustPerHr, avgCookiesPerCust){
     totalTdEl.textContent = this.totalCookiesPerDay;
     trEl.appendChild(totalTdEl);
 
+    totalTdEl.style.color = 'salmon';
+
     salesTable.appendChild(trEl);
   };
 } //end of constructor
@@ -74,7 +76,7 @@ function tableHeader(){
   emptyHeadCell.textContent = '';
   headTrEl.appendChild(emptyHeadCell);
 
-  emptyHeadCell.style.borderWidth = 0;
+  emptyHeadCell.style.borderWidth = 0; //style the empty cell on table header
 
   //create Table Head
   for(var i = 0; i < hours.length; i ++){
@@ -101,7 +103,7 @@ new CookieStand('1st and Pike', 23, 65, 6.3);
 new CookieStand('SeaTac Airport', 3, 24, 1.2);
 new CookieStand('Seattle Center', 11, 38, 3.7);
 new CookieStand('Capitol Hill', 20, 38, 2.3);
-new CookieStand('alki', 2, 16, 4.6);
+new CookieStand('Alki', 2, 16, 4.6);
 
 tableHeader();
 cookieStandRows();
