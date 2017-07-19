@@ -1,14 +1,33 @@
-table {
-	border: 10px solid black;
+* {
+  border: 1px dashed skyblue;
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 48px;
+  font-family: "Kurale", serif;
+  text-align: center;
+}
+
+#sales {
+	/*border: 12px solid black;*/
+  width: 95%;
+  margin: 10px auto;
 }
 
 td {
 	padding: 10px;
-	border-radius: 15px;
   border: 1px solid black;
+  font-family: "Raleway", sans-serif;
+  text-align: center;
 }
 
 th {
-	background-color: navy;
+	background-color: #353328;
 	color: white;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: lighter;
+  padding: 5px 8px;
+  /*margin: 2px 3px;*/
 }
