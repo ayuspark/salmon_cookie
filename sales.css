@@ -1,6 +1,10 @@
 * {
-  border: 1px dashed skyblue;
+  /*border: 1px dashed skyblue;*/
   box-sizing: border-box;
+}
+
+body {
+  background-color: #D9BD7E;
 }
 
 h2 {
@@ -9,7 +13,77 @@ h2 {
   font-size: 48px;
   font-family: "Kurale", serif;
   text-align: center;
+  margin: 0;
 }
+
+form {
+  background-color: #D9BD7E;
+  margin-bottom: 5px;
+  font-family: "Raleway", sans-serif;
+}
+
+legend {
+  font-size: 1.3em;
+}
+
+fieldset {
+  padding: 30px 10px 0 10px;
+  display: block;
+  border-style: none;
+}
+
+label {
+  display: inline-block;
+  /*float: left;*/
+  width: 24%;
+  text-align: center;
+  font-size: 1.4em;
+  font-weight: 600;
+  margin: 0 4px;
+}
+
+#labels {
+  clear:both;
+  padding: 0 auto;
+}
+
+input {
+  margin: 4px auto;
+  display: inline-block;
+  /*float: left;*/
+  width: 24%;
+  height: 4em;
+  margin: 2px 4px;
+  /*border-bottom: 1px solid #353328;
+  border-right: 0.5px dotted #353328;*/
+}
+
+#inputs {
+  clear: both;
+  margin-bottom: 10px;
+  /*border: 10px dashed orange;*/
+}
+
+button {
+  background-color: #353328;
+  color: #D9BD7E;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2em;
+  padding: 5px 55px;
+  display: block;
+  margin: 20px auto;
+}
+
+#button button:hover {
+  background-color: black;
+  font-weight: 600;
+}
+
+/*#button {
+  border: 10px dotted red;
+  margin-top: 70px;
+  margin-bottom: 0px;
+}*/
 
 #sales {
 	/*border: 12px solid black;*/
