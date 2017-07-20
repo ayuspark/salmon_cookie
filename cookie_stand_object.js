@@ -68,7 +68,7 @@ CookieStand.prototype.render = function(){
   totalTdEl.textContent = this.totalCookiesPerDay;
   trEl.appendChild(totalTdEl);
 
-  totalTdEl.style.color = '#D9BD7E'; //style the total cookies
+  totalTdEl.style.color = 'white'; //style the total cookies
 
   salesTable.appendChild(trEl);
 };
@@ -129,9 +129,9 @@ function handleNewStandSubmit(event){
   };
   //gather data from form
   var newStand = event.target.stand.value;
-  var newMinCustPerHr = event.target.minCustPerHr.value;
-  var newMaxCustPerhr = event.target.maxCustPerHr.value;
-  var newAvgCookiePerCust = event.target.avgCookiesPerCust.value;
+  var newMinCustPerHr = parseInt(event.target.minCustPerHr.value);
+  var newMaxCustPerhr = parseInt(event.target.maxCustPerHr.value);
+  var newAvgCookiePerCust = parseInt(event.target.avgCookiesPerCust.value);
   //feed into constructor
   var newLineInTable = new CookieStand(newStand, newMinCustPerHr, newMaxCustPerhr, newAvgCookiePerCust);
   //render new line in table

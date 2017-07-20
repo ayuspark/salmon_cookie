@@ -11,16 +11,20 @@
 
     <form id="new_stand">
       <fieldset>
-        <legend>New Stand Info</legend>
-        <label for="stand">Location</label>
-        <input name="stand" type="text" />
-        <label for="minCustPerHr">Min. Customer/HR</label>
-        <input name="minCustPerHr" type="number" />
-        <label for="maxCustPerHr">Max. Customer/HR</label>
-        <input name="maxCustPerHr" type = "number" />
-        <label for="avgCookiesPerCust">AVG. Coookie/person</lable>
-        <input name="avgCookiesPerCust" type="number" />
-        <button type="submit">New Stand</button>
+        <legend>Add New Cookie Stand</legend>
+        <div id="labels">
+          <label for="stand">Location</label>
+          <label for="minCustPerHr">Min. Customer/HR</label>
+          <label for="maxCustPerHr">Max. Customer/HR</label>
+          <label for="avgCookiesPerCust">AVG. Coookie/person</lable>
+        </div>
+        <div id="inputs">
+          <input name="stand" type="text" />
+          <input name="minCustPerHr" type="number" />
+          <input name="maxCustPerHr" type = "number" />
+          <input name="avgCookiesPerCust" type="number" />
+        </div>
+        <div id="button"><button type="submit">ADD</button></div>
       </fieldset>
     </form>
 
