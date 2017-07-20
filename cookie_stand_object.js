@@ -135,11 +135,11 @@ function makeLastRow(){
   }
 
   for(var k = 0; k < cookieStand.length; k++){
-    totalAllLocations += cookieStand[k].totalCookiesPerDay
+    totalAllLocations += cookieStand[k].totalCookiesPerDay;
   }//calculate total for ALL LOCATIONS of ALL HOURS
 
   var totalAllLocationsTdEl = document.createElement('td');
-  totalAllLocationsTdEl.textContent =totalAllLocations;
+  totalAllLocationsTdEl.textContent = totalAllLocations;
   lastRow.appendChild(totalAllLocationsTdEl);
 
   salesTable.appendChild(lastRow);
