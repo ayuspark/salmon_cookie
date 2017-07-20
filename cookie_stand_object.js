@@ -1,7 +1,8 @@
 'use strict';
 //__VARIABLE SETUP________________________________________________
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
-var cookieStand = [];
+var cookieStand = [];//array of objects
+var standNames = [];//array of object.prototype.name
 var salesTable = document.getElementById('sales');
 var newStandForm = document.getElementById('new_stand');
 
@@ -120,7 +121,6 @@ new CookieStand('Alki', 2, 16, 4.6);
 //__FUNCTION DECLARATION________________________________________
 tableHeader();//make Table Head
 cookieStandRows();//populate table body
-
 function handleNewStandSubmit(event){
   event.preventDefault();
 
@@ -132,10 +132,25 @@ function handleNewStandSubmit(event){
   var newMinCustPerHr = parseInt(event.target.minCustPerHr.value);
   var newMaxCustPerhr = parseInt(event.target.maxCustPerHr.value);
   var newAvgCookiePerCust = parseInt(event.target.avgCookiesPerCust.value);
-  //feed into constructor
-  var newLineInTable = new CookieStand(newStand, newMinCustPerHr, newMaxCustPerhr, newAvgCookiePerCust);
-  //render new line in table
-  newLineInTable.render();
-}
+  //verify if stand exist
+  cookieStand.forEach(function(eachStand){
+    standNames.push(eachStand.name);
+  });
 
+  if(standNames.includes(newStand)){
+    var keyInCookieStand = standNames.indexOf(newStand);
+    cookieStand[keyInCookieStand].minCustPerHr = newMinCustPerHr;
+    cookieStand[keyInCookieStand].maxCustPerHr = newMaxCustPerhr;
+    cookieStand[keyInCookieStand].avgCookiesPerCust = newAvgCookiePerCust;
+    cookieStand[keyInCookieStand].custPerHr = [];
+    cookieStand[keyInCookieStand].cookiesPerHr = [];
+    cookieStand[keyInCookieStand].totalCookiesPerDay = 0;
+    cookieStand[keyInCookieStand].calcTotalCookiesPerDay();
+    salesTable.innerHTML = '';
+    return tableHeader(), cookieStandRows();
+  } else {
+    var newLineInTable = new CookieStand(newStand, newMinCustPerHr, newMaxCustPerhr, newAvgCookiePerCust);
+    newLineInTable.render();
+  }
+}
 newStandForm.addEventListener('submit', handleNewStandSubmit);
