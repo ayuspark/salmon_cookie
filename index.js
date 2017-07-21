@@ -9,7 +9,6 @@ articleAboutUs.style.display = 'none';
 articleTee.style.display = 'none';
 articleCookie.style.display = 'none';
 
-
 //________ABOUT_US_NAV______________________________________
 function clickOnAboutUsNav(){
   articleAboutUs.style.display = 'block';
@@ -20,13 +19,13 @@ function clickOnAboutUsNav(){
 aboutUsNav.addEventListener('click', clickOnAboutUsNav);
 
 //________BUY_COOKIE______________________________________
-function clickonCookieNav(){
+function clickOnCookieNav(){
   articleCookie.style.display = 'block';
   articleCookie.style.margin = '0px auto 0px auto';
   articleAboutUs.style.display = 'none';
   articleTee.style.display = 'none';
 }
-buyCookieNav.addEventListener('click', clickonCookieNav);
+buyCookieNav.addEventListener('click', clickOnCookieNav);
 
 // ________COOL_TEES______________________________________
 function clickOnTeeNav(){
