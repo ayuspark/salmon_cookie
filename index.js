@@ -4,10 +4,10 @@ var aboutUsNav = document.getElementById('about_us_nav');
 var teeNav = document.getElementById('tee_nav');
 var articleTee = document.getElementById('tee');
 var buyCookieNav = document.getElementById('cookie_nav');
-var divCookie = document.getElementById('cookie_div');
+var articleCookie = document.getElementById('cookie');
 articleAboutUs.style.display = 'none';
 articleTee.style.display = 'none';
-divCookie.style.display = 'none';
+articleCookie.style.display = 'none';
 
 
 //________ABOUT_US_NAV______________________________________
@@ -15,14 +15,14 @@ function clickOnAboutUsNav(){
   articleAboutUs.style.display = 'block';
   articleAboutUs.style.margin = '0px auto 0px auto';
   articleTee.style.display = 'none';
-  divCookie.style.display = 'none';
+  articleCookie.style.display = 'none';
 }
 aboutUsNav.addEventListener('click', clickOnAboutUsNav);
 
 //________BUY_COOKIE______________________________________
 function clickonCookieNav(){
-  divCookie.style.display = 'block';
-  divCookie.style.margin = '0px auto 0px auto';
+  articleCookie.style.display = 'block';
+  articleCookie.style.margin = '0px auto 0px auto';
   articleAboutUs.style.display = 'none';
   articleTee.style.display = 'none';
 }
@@ -33,7 +33,7 @@ function clickOnTeeNav(){
   articleTee.style.display = 'block';
   articleTee.style.margin = '0px auto 0px auto';
   articleAboutUs.style.display = 'none';
-  divCookie.style.display = 'none';
+  articleCookie.style.display = 'none';
 }
 teeNav.addEventListener('click', clickOnTeeNav);
 
