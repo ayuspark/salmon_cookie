@@ -61,10 +61,18 @@ font-family: 'Kurale', serif;*/
   /*background-color: #353328;*/
 }
 
+#about_us {
+  width: 96%;
+  height: 96%;
+  margin: 0px 1400px 0px -1400px ;
+  border: 2px solid orange;
+  overflow: scroll;
+}
+
 #hero {
   clear: both;
   background-color: #D9BD7E;
-
+  border: 2px solid red;
 }
 
 #hero img {

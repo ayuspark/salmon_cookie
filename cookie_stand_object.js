@@ -173,6 +173,7 @@ function handleNewStandSubmit(event){
   cookieStand.forEach(function(eachStand){
     standNames.push(eachStand.name);
   });
+  newStandForm.reset();
 
   if(standNames.includes(newStand)){
     var keyInCookieStand = standNames.indexOf(newStand);
@@ -184,11 +185,13 @@ function handleNewStandSubmit(event){
     cookieStand[keyInCookieStand].totalCookiesPerDay = 0;
     cookieStand[keyInCookieStand].calcTotalCookiesPerDay();
     eachHrTotalArray = Array(hours.length).fill(0);
+    totalAllLocations = 0;
     salesTable.innerHTML = '';
     return tableHeader(), cookieStandRows(), makeLastRow();
   } else {
     var newLineInTable = new CookieStand(newStand, newMinCustPerHr, newMaxCustPerhr, newAvgCookiePerCust);
     eachHrTotalArray = Array(hours.length).fill(0);
+    totalAllLocations = 0;
     salesTable.innerHTML = '';
     return tableHeader(), cookieStandRows(), makeLastRow();
   }
