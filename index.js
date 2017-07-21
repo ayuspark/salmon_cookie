@@ -46,3 +46,13 @@ function clickOnStaffNav(){
   }
 }
 staffNav.addEventListener('click', clickOnStaffNav);
+
+//________BLINK_SALMON______________________________________
+var blinkSalmonImg = document.getElementById('blink_salmon');
+window.addEventListener('load', setInterval(function (){
+  if(blinkSalmonImg.style.visibility == 'hidden'){
+    blinkSalmonImg.style.visibility = 'visible';
+  } else {
+    blinkSalmonImg.style.visibility = 'hidden';
+  }
+}, 777));
