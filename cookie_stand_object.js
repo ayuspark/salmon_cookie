@@ -1,7 +1,10 @@
 'use strict';
 //__VARIABLE SETUP________________________________________________
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
-var cookieStand = [];
+var cookieStand = [];//array of objects
+var standNames = [];//array of object.prototype.name
+var eachHrTotalArray = Array(hours.length).fill(0);
+var totalAllLocations = 0;
 var salesTable = document.getElementById('sales');
 var newStandForm = document.getElementById('new_stand');
 
@@ -95,7 +98,7 @@ function tableHeader(){
 
   //create 'Total' in table head
   var totalThEl = document.createElement('th');
-  totalThEl.textContent = 'Total';
+  totalThEl.textContent = 'Store Total';
   headTrEl.appendChild(totalThEl);
   salesTable.appendChild(headTrEl);
   totalThEl.style.backgroundColor = '#D9BD7E';
@@ -109,6 +112,39 @@ function cookieStandRows(){
   }
 }
 
+//create Table Last Row
+function makeLastRow(){
+  var lastRow = document.createElement('tr');
+  var lastRowHeader = document.createElement('td');
+  lastRowHeader.textContent = 'Hourly Total';
+  lastRow.appendChild(lastRowHeader);
+  lastRowHeader.style.color = '#353328';
+  lastRowHeader.style.backgroundColor = '#D9BD7E';
+
+  for(var i = 0; i < hours.length; i++){
+    for(var n = 0; n < cookieStand.length; n++){
+      eachHrTotalArray[i] += cookieStand[n].cookiesPerHr[i];
+    }
+  }
+
+  for(var m = 0; m < hours.length; m++){
+    var hourlyTotalTdEl = document.createElement('td');
+    hourlyTotalTdEl.textContent = eachHrTotalArray[m];
+    lastRow.appendChild(hourlyTotalTdEl);
+    hourlyTotalTdEl.style.color = 'white';
+  }
+
+  for(var k = 0; k < cookieStand.length; k++){
+    totalAllLocations += cookieStand[k].totalCookiesPerDay;
+  }//calculate total for ALL LOCATIONS of ALL HOURS
+
+  var totalAllLocationsTdEl = document.createElement('td');
+  totalAllLocationsTdEl.textContent = totalAllLocations;
+  lastRow.appendChild(totalAllLocationsTdEl);
+
+  salesTable.appendChild(lastRow);
+}
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //create new instance of CookieStand
 new CookieStand('1st and Pike', 23, 65, 6.3);
@@ -120,6 +156,7 @@ new CookieStand('Alki', 2, 16, 4.6);
 //__FUNCTION DECLARATION________________________________________
 tableHeader();//make Table Head
 cookieStandRows();//populate table body
+makeLastRow();
 
 function handleNewStandSubmit(event){
   event.preventDefault();
@@ -132,10 +169,31 @@ function handleNewStandSubmit(event){
   var newMinCustPerHr = parseInt(event.target.minCustPerHr.value);
   var newMaxCustPerhr = parseInt(event.target.maxCustPerHr.value);
   var newAvgCookiePerCust = parseInt(event.target.avgCookiesPerCust.value);
-  //feed into constructor
-  var newLineInTable = new CookieStand(newStand, newMinCustPerHr, newMaxCustPerhr, newAvgCookiePerCust);
-  //render new line in table
-  newLineInTable.render();
-}
+  //verify if stand exist
+  cookieStand.forEach(function(eachStand){
+    standNames.push(eachStand.name);
+  });
+  newStandForm.reset();
 
+  if(standNames.includes(newStand)){
+    var keyInCookieStand = standNames.indexOf(newStand);
+    cookieStand[keyInCookieStand].minCustPerHr = newMinCustPerHr;
+    cookieStand[keyInCookieStand].maxCustPerHr = newMaxCustPerhr;
+    cookieStand[keyInCookieStand].avgCookiesPerCust = newAvgCookiePerCust;
+    cookieStand[keyInCookieStand].custPerHr = [];
+    cookieStand[keyInCookieStand].cookiesPerHr = [];
+    cookieStand[keyInCookieStand].totalCookiesPerDay = 0;
+    cookieStand[keyInCookieStand].calcTotalCookiesPerDay();
+    eachHrTotalArray = Array(hours.length).fill(0);
+    totalAllLocations = 0;
+    salesTable.innerHTML = '';
+    return tableHeader(), cookieStandRows(), makeLastRow();
+  } else {
+    var newLineInTable = new CookieStand(newStand, newMinCustPerHr, newMaxCustPerhr, newAvgCookiePerCust);
+    eachHrTotalArray = Array(hours.length).fill(0);
+    totalAllLocations = 0;
+    salesTable.innerHTML = '';
+    return tableHeader(), cookieStandRows(), makeLastRow();
+  }
+}
 newStandForm.addEventListener('submit', handleNewStandSubmit);
